@@ -1,6 +1,6 @@
-﻿# CSS Practice - Flexbox & Grid
+﻿# CSS Practice - Flexbox, Grid & Bootstrap
 
-Bộ bài thực hành CSS Flexbox và Grid.
+Bộ bài thực hành CSS Flexbox, Grid và Bootstrap.
 
 ## Danh sách bài học
 
@@ -10,3 +10,4 @@ Bộ bài thực hành CSS Flexbox và Grid.
 | [grid-gap](./grid-gap/) | Thuộc tính `grid-gap` - khoảng cách giữa hàng và cột |
 | [flex-basis](./flex-basis/) | Thuộc tính `flex-basis` - kích thước cơ sở của Flex Item |
 | [flex-grow](./flex-grow/) | Thuộc tính `flex-grow` - khả năng phát triển của Flex Item |
+| [bootstrap-navbar](./bootstrap-navbar/) | Bootstrap Navbar - thanh điều hướng responsive |
