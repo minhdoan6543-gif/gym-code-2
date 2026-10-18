@@ -1,0 +1,92 @@
+/* ===== Reset & Base ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    padding: 30px;
+    color: #333;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #1a1a2e;
+}
+
+h1 code {
+    background: #e0e0e0;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 22px;
+}
+
+section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #1565c0;
+}
+
+.note {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.code-note {
+    font-size: 13px;
+    color: #888;
+    margin-top: 12px;
+    font-family: monospace;
+    background: #f0f0f0;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* ===== Ví dụ 1: grid-gap: 20px ===== */
+.grid-container-1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    max-width: 500px;
+}
+
+.grid-container-1 div {
+    background-color: lightblue;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* ===== Ví dụ 2: grid-gap: 30px 10px ===== */
+.grid-container-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px 10px;
+    max-width: 600px;
+}
+
+.grid-container-2 div {
+    background-color: lightgreen;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+}
