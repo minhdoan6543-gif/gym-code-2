@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng Ký</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 30px 15px;
+        }
+
+        /* ===== Form Card ===== */
+        .form-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 45px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+            width: 100%;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* ===== Logo / Title ===== */
+        .form-logo {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 15px;
+        }
+
+        .form-card h2 {
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: #1a1a2e;
+        }
+
+        /* ===== Labels ===== */
+        .form-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #374151;
+            margin-bottom: 6px;
+        }
+
+        /* ===== Inputs ===== */
+        .form-control, .form-select {
+            border-radius: 10px;
+            border: 1.5px solid #e5e7eb;
+            padding: 10px 14px;
+            font-size: 0.95rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+
+        /* ===== Section divider ===== */
+        .section-divider {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #9ca3af;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0 15px;
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #e5e7eb;
+        }
+
+        /* ===== Radio & Checkbox ===== */
+        .form-check-input:checked {
+            background-color: #667eea;
+            border-color: #667eea;
+        }
+
+        .form-check-label { font-size: 0.92rem; color: #374151; }
+
+        /* ===== Submit Button ===== */
+        .btn-submit {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 12px;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .btn-submit:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* ===== Reset Button ===== */
+        .btn-reset {
+            border-radius: 12px;
+            padding: 12px;
+            font-weight: 600;
+        }
+
+        /* ===== Login link ===== */
+        .login-link { font-size: 0.9rem; }
+        .login-link a { color: #667eea; font-weight: 600; text-decoration: none; }
+        .login-link a:hover { text-decoration: underline; }
+
+        /* ===== Password strength ===== */
+        .strength-bar {
+            height: 4px;
+            border-radius: 4px;
+            transition: width 0.3s, background 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-card">
+
+            <!-- ===== Tiêu đề ===== -->
+            <div class="text-center mb-4">
+                <div class="form-logo">📝</div>
+                <h2>Tạo Tài Khoản</h2>
+                <p class="text-muted mb-0" style="font-size:0.92rem;">
+                    Đăng ký miễn phí và bắt đầu trải nghiệm ngay hôm nay
+                </p>
+            </div>
+
+            <!-- ===== FORM ===== -->
+            <form id="registerForm" novalidate>
+
+                <!-- Họ và tên -->
+                <div class="mb-3">
+                    <label for="fullname" class="form-label">👤 Họ và Tên</label>
+                    <input type="text" class="form-control" id="fullname"
+                           placeholder="Nhập họ và tên đầy đủ" required>
+                    <div class="invalid-feedback">Vui lòng nhập họ và tên.</div>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">📧 Email</label>
+                    <input type="email" class="form-control" id="email"
+                           placeholder="example@email.com" required>
+                    <div class="invalid-feedback">Vui lòng nhập email hợp lệ.</div>
+                    <div class="form-text text-muted">Chúng tôi sẽ không chia sẻ email của bạn.</div>
+                </div>
+
+                <!-- Mật khẩu -->
+                <div class="mb-3">
+                    <label for="password" class="form-label">🔒 Mật Khẩu</label>
+                    <input type="password" class="form-control" id="password"
+                           placeholder="Tối thiểu 8 ký tự" required minlength="8"
+                           oninput="checkStrength(this.value)">
+                    <div class="mt-2">
+                        <div class="d-flex gap-1">
+                            <div class="flex-fill bg-secondary rounded" style="height:4px;" id="bar1"></div>
+                            <div class="flex-fill bg-secondary rounded" style="height:4px;" id="bar2"></div>
+                            <div class="flex-fill bg-secondary rounded" style="height:4px;" id="bar3"></div>
+                            <div class="flex-fill bg-secondary rounded" style="height:4px;" id="bar4"></div>
+                        </div>
+                        <small id="strengthText" class="text-muted">Độ mạnh mật khẩu</small>
+                    </div>
+                    <div class="invalid-feedback">Mật khẩu phải có ít nhất 8 ký tự.</div>
+                </div>
+
+                <!-- Xác nhận mật khẩu -->
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">🔑 Xác Nhận Mật Khẩu</label>
+                    <input type="password" class="form-control" id="confirmPassword"
+                           placeholder="Nhập lại mật khẩu" required>
+                    <div class="invalid-feedback">Mật khẩu xác nhận không khớp.</div>
+                </div>
+
+                <!-- Giới tính -->
+                <div class="section-divider">Thông tin cá nhân</div>
+
+                <div class="mb-3">
+                    <label class="form-label">⚥ Giới Tính</label>
+                    <div class="d-flex gap-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   name="gender" id="male" value="male" required>
+                            <label class="form-check-label" for="male">Nam</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   name="gender" id="female" value="female">
+                            <label class="form-check-label" for="female">Nữ</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   name="gender" id="other" value="other">
+                            <label class="form-check-label" for="other">Khác</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sở thích -->
+                <div class="mb-3">
+                    <label class="form-label">❤️ Sở Thích</label>
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="tech" value="tech">
+                                <label class="form-check-label" for="tech">💻 Công nghệ</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="design" value="design">
+                                <label class="form-check-label" for="design">🎨 Thiết kế</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="music" value="music">
+                                <label class="form-check-label" for="music">🎵 Âm nhạc</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="travel" value="travel">
+                                <label class="form-check-label" for="travel">✈️ Du lịch</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="sport" value="sport">
+                                <label class="form-check-label" for="sport">⚽ Thể thao</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="reading" value="reading">
+                                <label class="form-check-label" for="reading">📚 Đọc sách</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quốc gia -->
+                <div class="mb-4">
+                    <label for="country" class="form-label">🌍 Quốc Gia</label>
+                    <select class="form-select" id="country" required>
+                        <option value="" disabled selected>-- Chọn quốc gia --</option>
+                        <option value="vn">🇻🇳 Việt Nam</option>
+                        <option value="us">🇺🇸 Hoa Kỳ</option>
+                        <option value="jp">🇯🇵 Nhật Bản</option>
+                        <option value="kr">🇰🇷 Hàn Quốc</option>
+                        <option value="sg">🇸🇬 Singapore</option>
+                        <option value="other">🌐 Khác</option>
+                    </select>
+                    <div class="invalid-feedback">Vui lòng chọn quốc gia.</div>
+                </div>
+
+                <!-- Điều khoản -->
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" id="terms" required>
+                    <label class="form-check-label" for="terms" style="font-size:0.88rem;">
+                        Tôi đồng ý với
+                        <a href="#" style="color:#667eea;font-weight:600;">Điều khoản sử dụng</a>
+                        và
+                        <a href="#" style="color:#667eea;font-weight:600;">Chính sách bảo mật</a>
+                    </label>
+                    <div class="invalid-feedback">Bạn phải đồng ý với điều khoản để tiếp tục.</div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-submit text-white">
+                        🚀 Đăng Ký Ngay
+                    </button>
+                    <button type="reset" class="btn btn-outline-secondary btn-reset">
+                        🔄 Nhập Lại
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- Login link -->
+            <p class="text-center login-link mt-4 mb-0">
+                Đã có tài khoản? <a href="#">Đăng nhập tại đây</a>
+            </p>
+
+        </div><!-- /.form-card -->
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // ===== Password strength checker =====
+        function checkStrength(value) {
+            const bars = ['bar1', 'bar2', 'bar3', 'bar4'];
+            const text = document.getElementById('strengthText');
+            const colors = ['#ef4444', '#f97316', '#eab308', '#22c55e'];
+            const labels = ['Rất yếu', 'Yếu', 'Trung bình', 'Mạnh'];
+
+            let score = 0;
+            if (value.length >= 8)           score++;
+            if (/[A-Z]/.test(value))         score++;
+            if (/[0-9]/.test(value))         score++;
+            if (/[^A-Za-z0-9]/.test(value))  score++;
+
+            bars.forEach((id, i) => {
+                const el = document.getElementById(id);
+                el.style.background = i < score ? colors[score - 1] : '#e5e7eb';
+            });
+
+            text.textContent = value.length === 0 ? 'Độ mạnh mật khẩu' : labels[score - 1] || 'Rất yếu';
+            text.style.color = value.length === 0 ? '#9ca3af' : colors[score - 1] || '#ef4444';
+        }
+
+        // ===== Form validation =====
+        document.getElementById('registerForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const pwd    = document.getElementById('password').value;
+            const cpwd   = document.getElementById('confirmPassword').value;
+            const cpwdEl = document.getElementById('confirmPassword');
+
+            if (pwd !== cpwd) {
+                cpwdEl.classList.add('is-invalid');
+                cpwdEl.setCustomValidity('Không khớp');
+            } else {
+                cpwdEl.classList.remove('is-invalid');
+                cpwdEl.setCustomValidity('');
+            }
+
+            if (!this.checkValidity()) {
+                this.classList.add('was-validated');
+                return;
+            }
+
+            // Thành công
+            alert('🎉 Đăng ký thành công! Chào mừng bạn.');
+            this.reset();
+            this.classList.remove('was-validated');
+            checkStrength('');
+        });
+    </script>
+
+</body>
+</html>
