@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Containers & Grid System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+
+        /* ===== Header ===== */
+        .site-header {
+            background: linear-gradient(135deg, #212529 0%, #343a40 100%);
+            padding: 30px 0;
+        }
+
+        .site-header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .site-header p {
+            opacity: 0.75;
+            margin-bottom: 0;
+        }
+
+        /* ===== Main Content ===== */
+        .main-content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        }
+
+        .main-content h2 {
+            font-weight: 700;
+            color: #0d6efd;
+            border-left: 5px solid #0d6efd;
+            padding-left: 14px;
+        }
+
+        .article-card {
+            border: none;
+            border-radius: 10px;
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 18px;
+            transition: box-shadow 0.3s;
+        }
+
+        .article-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+
+        .article-card h5 { font-weight: 700; color: #212529; }
+
+        /* ===== Sidebar ===== */
+        .sidebar {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        }
+
+        .sidebar .widget-title {
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6c757d;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .sidebar .list-group-item {
+            border: none;
+            padding: 8px 0;
+            color: #495057;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .sidebar .list-group-item:hover { color: #0d6efd; }
+
+        .tag-badge {
+            display: inline-block;
+            background: #e9ecef;
+            color: #495057;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin: 3px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .tag-badge:hover { background: #0d6efd; color: white; }
+
+        /* ===== Footer ===== */
+        footer a { color: #adb5bd; text-decoration: none; }
+        footer a:hover { color: #fff; }
+
+        /* ===== Responsive label (demo) ===== */
+        .responsive-badge {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            z-index: 9999;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="site-header text-white text-center">
+        <div class="container">
+            <h1>📰 Bootstrap Grid Layout</h1>
+            <p>Thực hành Bootstrap Containers & Grid System — Responsive trên mọi thiết bị</p>
+        </div>
+    </header>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">MyBlog</a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarMain"
+                    aria-controls="navbarMain"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">🏠 Trang Chủ</a>
+                    </li>
+                    <!-- Dropdown: Danh mục -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            📂 Danh Mục
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">💻 Công nghệ</a></li>
+                            <li><a class="dropdown-item" href="#">🎨 Thiết kế</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">📊 Marketing</a></li>
+                        </ul>
+                    </li>
+                    <!-- Dropdown: Về chúng tôi -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            ℹ️ Về Chúng Tôi
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">👥 Đội ngũ</a></li>
+                            <li><a class="dropdown-item" href="#">🎯 Sứ mệnh</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">📞 Liên Hệ</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Tìm kiếm..." aria-label="Search">
+                    <button class="btn btn-light" type="submit">🔍</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== MAIN LAYOUT ==================== -->
+    <main class="container py-4">
+        <div class="row g-4">
+
+            <!-- ===== MAIN CONTENT (col-md-8) ===== -->
+            <div class="col-12 col-md-8">
+                <div class="main-content">
+                    <h2 class="mb-4">Bài Viết Mới Nhất</h2>
+
+                    <!-- Article 1 -->
+                    <div class="article-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <span class="badge bg-primary mb-2">Công nghệ</span>
+                            <small class="text-muted">18/10/2024</small>
+                        </div>
+                        <h5>Bootstrap Grid System là gì và cách sử dụng</h5>
+                        <p class="text-muted mb-2">
+                            Bootstrap Grid System là hệ thống lưới 12 cột mạnh mẽ giúp tạo bố cục responsive một cách dễ dàng.
+                            Sử dụng các class như <code>col-md-8</code> hay <code>col-md-4</code> để chia màn hình.
+                        </p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Đọc thêm →</a>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div class="article-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <span class="badge bg-success mb-2">Thiết kế</span>
+                            <small class="text-muted">17/10/2024</small>
+                        </div>
+                        <h5>Responsive Design — Thiết kế cho mọi màn hình</h5>
+                        <p class="text-muted mb-2">
+                            Responsive Design giúp giao diện web hiển thị đẹp trên desktop, tablet và mobile.
+                            Bootstrap hỗ trợ sẵn thông qua các breakpoint: <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>.
+                        </p>
+                        <a href="#" class="btn btn-sm btn-outline-success">Đọc thêm →</a>
+                    </div>
+
+                    <!-- Article 3 -->
+                    <div class="article-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <span class="badge bg-warning text-dark mb-2">Tips</span>
+                            <small class="text-muted">16/10/2024</small>
+                        </div>
+                        <h5>Container vs Container-fluid trong Bootstrap</h5>
+                        <p class="text-muted mb-2">
+                            <code>container</code> giới hạn chiều rộng theo breakpoint, còn <code>container-fluid</code>
+                            luôn chiếm 100% chiều rộng màn hình. Chọn đúng loại giúp layout đẹp hơn.
+                        </p>
+                        <a href="#" class="btn btn-sm btn-outline-warning">Đọc thêm →</a>
+                    </div>
+
+                    <!-- Phân trang -->
+                    <nav aria-label="Phân trang" class="mt-3">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled"><a class="page-link" href="#">«</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">»</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- ===== SIDEBAR (col-md-4) ===== -->
+            <div class="col-12 col-md-4">
+                <div class="sidebar">
+
+                    <!-- Widget: Giới thiệu -->
+                    <div class="mb-4">
+                        <h6 class="widget-title">Về Tác Giả</h6>
+                        <div class="text-center mb-2">
+                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center"
+                                 style="width:70px;height:70px;font-size:2rem;">👤</div>
+                        </div>
+                        <p class="text-muted small text-center">
+                            Xin chào! Tôi là lập trình viên Frontend đam mê Bootstrap và CSS.
+                        </p>
+                    </div>
+
+                    <!-- Widget: Bài viết nổi bật -->
+                    <div class="mb-4">
+                        <h6 class="widget-title">Bài Viết Nổi Bật</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">📌 Hướng dẫn CSS Flexbox từ A-Z</li>
+                            <li class="list-group-item">📌 CSS Grid Layout thực chiến</li>
+                            <li class="list-group-item">📌 10 tips Bootstrap hữu ích</li>
+                            <li class="list-group-item">📌 Responsive Web Design 2024</li>
+                        </ul>
+                    </div>
+
+                    <!-- Widget: Tags -->
+                    <div class="mb-4">
+                        <h6 class="widget-title">Tags</h6>
+                        <div>
+                            <span class="tag-badge">Bootstrap</span>
+                            <span class="tag-badge">CSS Grid</span>
+                            <span class="tag-badge">Flexbox</span>
+                            <span class="tag-badge">HTML</span>
+                            <span class="tag-badge">Responsive</span>
+                            <span class="tag-badge">Frontend</span>
+                        </div>
+                    </div>
+
+                    <!-- Widget: Thông báo -->
+                    <div class="alert alert-info small mb-0">
+                        📢 <strong>Lưu ý:</strong> Sidebar này hiển thị bên phải trên desktop và xuống dưới trên mobile nhờ <code>col-md-4</code>.
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- /.row -->
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-dark text-white py-4 mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h6 class="fw-bold">MyBlog</h6>
+                    <p class="small text-muted mb-0">Chia sẻ kiến thức lập trình Frontend cho mọi người.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0 text-md-center">
+                    <h6 class="fw-bold">Liên kết</h6>
+                    <div class="d-flex flex-column gap-1">
+                        <a href="#">Trang Chủ</a>
+                        <a href="#">Danh Mục</a>
+                        <a href="#">Liên Hệ</a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <h6 class="fw-bold">Liên hệ</h6>
+                    <p class="small text-muted mb-0">📧 contact@myblog.vn</p>
+                    <p class="small text-muted mb-0">📞 0988 123 456</p>
+                </div>
+            </div>
+            <hr class="border-secondary mt-3">
+            <p class="text-center text-muted small mb-0">&copy; 2024 Công Ty Chúng Tôi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

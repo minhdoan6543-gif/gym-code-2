@@ -13,3 +13,4 @@ Bộ bài thực hành CSS Flexbox, Grid và Bootstrap.
 | [bootstrap-navbar](./bootstrap-navbar/) | Bootstrap Navbar - thanh điều hướng responsive |
 | [bootstrap-landing](./bootstrap-landing/) | Bootstrap Landing Page - trang đích hoàn chỉnh |
 | [bootstrap-company](./bootstrap-company/) | Bootstrap Company Page - trang giới thiệu doanh nghiệp |
+| [bootstrap-grid](./bootstrap-grid/) | Bootstrap Containers & Grid System - bố cục 2 cột responsive |
