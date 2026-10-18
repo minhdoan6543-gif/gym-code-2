@@ -1,0 +1,143 @@
+/* ===========================
+   poly.css - Custom Styles
+   =========================== */
+
+/* ===== HEADER ===== */
+header {
+    position: relative;
+    min-height: 130px;
+    background-color: #2c3e50;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.shopping-mall {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    font-variant: small-caps;
+    z-index: 1;
+}
+
+.shopping-mall > h1 {
+    font-family: Impact, Haettenschweiler, sans-serif;
+    font-size: 50px;
+    color: white;
+    letter-spacing: 0.3px;
+    text-shadow: 0 0 2px black;
+    padding-bottom: 0px;
+    border-bottom: 1px dotted gray;
+    margin: 0px;
+}
+
+.shopping-mall > h5 {
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+    color: #bdc3c7;
+}
+
+header img.pull-right {
+    height: 120px;
+    opacity: 0.85;
+}
+
+/* ===== SECTION TITLE ===== */
+.poly-section-title {
+    color: #2c3e50;
+    font-weight: bold;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* ===== GIỎ HÀNG ===== */
+.poly-cart {
+    margin-top: 5px;
+}
+
+.poly-cart ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    font-variant: small-caps;
+}
+
+.poly-cart ul li {
+    padding: 3px 0;
+    border-bottom: 1px dotted #ddd;
+    font-size: 13px;
+}
+
+.poly-cart ul li:last-child { border-bottom: none; }
+
+.poly-cart .panel-heading strong {
+    font-variant: small-caps;
+    font-size: larger;
+    text-shadow: 0 0 2px darkgray;
+}
+
+/* ===== SẢN PHẨM ===== */
+.poly-prod {
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.poly-prod .panel {
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.poly-prod .panel:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+}
+
+.poly-prod .panel-body img {
+    height: 150px;
+    max-width: 95%;
+    object-fit: cover;
+}
+
+.poly-prod .panel-heading {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.poly-prod .panel-footer {
+    font-weight: bold;
+    font-size: 16px;
+    color: #e74c3c;
+    background-color: #fafafa;
+}
+
+/* ===== LIST GROUP (Chủng loại) ===== */
+.list-group-item {
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.list-group-item:hover {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.list-group-item .glyphicon {
+    margin-right: 6px;
+    color: #3498db;
+}
+
+/* ===== FOOTER ===== */
+footer.panel {
+    margin-top: 20px;
+    border-top: 2px solid #ddd;
+}
+
+footer .panel-heading {
+    background-color: #2c3e50;
+    color: white;
+}
+
+footer .panel-heading p {
+    margin: 0;
+    font-size: 14px;
+}
