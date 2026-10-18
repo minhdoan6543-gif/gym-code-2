@@ -11,3 +11,4 @@ Bộ bài thực hành CSS Flexbox, Grid và Bootstrap.
 | [flex-basis](./flex-basis/) | Thuộc tính `flex-basis` - kích thước cơ sở của Flex Item |
 | [flex-grow](./flex-grow/) | Thuộc tính `flex-grow` - khả năng phát triển của Flex Item |
 | [bootstrap-navbar](./bootstrap-navbar/) | Bootstrap Navbar - thanh điều hướng responsive |
+| [bootstrap-landing](./bootstrap-landing/) | Bootstrap Landing Page - trang đích hoàn chỉnh |
