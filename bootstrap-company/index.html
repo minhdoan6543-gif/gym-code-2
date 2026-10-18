@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu Công Ty</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        /* ===== Smooth scroll ===== */
+        html { scroll-behavior: smooth; }
+
+        /* ===== Navbar ===== */
+        .navbar { box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+
+        /* ===== Hero Section ===== */
+        .hero-section {
+            background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+            padding: 110px 20px 80px;
+            margin-top: 56px;
+        }
+
+        .hero-section h1 { font-size: 2.8rem; font-weight: 800; }
+        .hero-section p  { font-size: 1.2rem; opacity: 0.9; }
+
+        /* ===== Section tiêu đề ===== */
+        .section-title {
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: #0d6efd;
+            border-radius: 2px;
+        }
+
+        /* ===== About Section ===== */
+        .about-section { background-color: #f8f9fa; }
+
+        .stat-box {
+            background: #0d6efd;
+            color: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .stat-box h3 { font-size: 2.5rem; font-weight: 800; }
+
+        /* ===== Service Cards ===== */
+        .service-card {
+            border: none;
+            border-radius: 14px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+        }
+
+        .service-card .icon { font-size: 2.8rem; margin-bottom: 12px; }
+
+        /* ===== Contact Section ===== */
+        .contact-section { background-color: #f0f4ff; }
+
+        .contact-info-box {
+            background: white;
+            border-radius: 12px;
+            padding: 25px 30px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+        }
+
+        /* ===== Footer links ===== */
+        footer a { color: #adb5bd; text-decoration: none; }
+        footer a:hover { color: white; }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary fs-4" href="#">🏢 Doanh Nghiệp</a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Điều hướng">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active fw-semibold" href="#">Trang Chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Về Chúng Tôi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Dịch Vụ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Liên Hệ</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-primary ms-3">Liên hệ ngay</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <header class="hero-section text-white text-center">
+        <div class="container">
+            <h1>Chào mừng đến với<br>Công Ty Chúng Tôi</h1>
+            <p class="mt-3 mb-4">Chúng tôi cung cấp các giải pháp chuyên nghiệp<br>cho sự phát triển bền vững của doanh nghiệp bạn.</p>
+            <a href="#services" class="btn btn-light btn-lg me-2 fw-semibold">🔍 Tìm Hiểu Ngay</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg">📞 Liên hệ</a>
+        </div>
+    </header>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Về Chúng Tôi</h2>
+            <div class="row align-items-center g-4">
+                <div class="col-md-7">
+                    <p class="text-muted fs-5">
+                        Công ty chúng tôi chuyên cung cấp các dịch vụ công nghệ, thiết kế website
+                        và tiếp thị kỹ thuật số với hơn <strong>10 năm kinh nghiệm</strong> trong ngành.
+                    </p>
+                    <p class="text-muted">
+                        Với đội ngũ hơn 50 chuyên gia tận tâm, chúng tôi đã đồng hành cùng
+                        hàng trăm doanh nghiệp vừa và lớn trên khắp cả nước, mang lại giá trị
+                        thực sự và kết quả đo lường được.
+                    </p>
+                    <ul class="list-unstyled text-muted mt-3">
+                        <li class="mb-2">✅ Hơn 10 năm kinh nghiệm trong ngành công nghệ</li>
+                        <li class="mb-2">✅ Đã phục vụ hơn 500+ doanh nghiệp</li>
+                        <li class="mb-2">✅ Đội ngũ hỗ trợ kỹ thuật 24/7</li>
+                        <li class="mb-2">✅ Cam kết chất lượng & bảo hành dài hạn</li>
+                    </ul>
+                </div>
+                <div class="col-md-5">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <h3>500+</h3>
+                                <p class="mb-0">Khách hàng</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <h3>10+</h3>
+                                <p class="mb-0">Năm kinh nghiệm</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <h3>50+</h3>
+                                <p class="mb-0">Chuyên gia</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <h3>98%</h3>
+                                <p class="mb-0">Hài lòng</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-2">Dịch Vụ Của Chúng Tôi</h2>
+            <p class="text-center text-muted mb-5">Giải pháp toàn diện cho mọi nhu cầu doanh nghiệp</p>
+
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="card service-card p-4 text-center">
+                        <div class="icon">🎨</div>
+                        <h4 class="fw-bold">Thiết Kế Website</h4>
+                        <p class="text-muted">Thiết kế giao diện chuyên nghiệp, hiện đại và tối ưu hóa trải nghiệm người dùng trên mọi thiết bị.</p>
+                        <a href="#contact" class="btn btn-outline-primary mt-2">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="card service-card p-4 text-center">
+                        <div class="icon">📈</div>
+                        <h4 class="fw-bold">Marketing Online</h4>
+                        <p class="text-muted">Giải pháp tiếp thị số toàn diện giúp doanh nghiệp của bạn tăng trưởng doanh thu và mở rộng thị phần.</p>
+                        <a href="#contact" class="btn btn-outline-primary mt-2">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="card service-card p-4 text-center">
+                        <div class="icon">🛠️</div>
+                        <h4 class="fw-bold">Hỗ Trợ Khách Hàng</h4>
+                        <p class="text-muted">Chúng tôi cam kết hỗ trợ khách hàng 24/7 với đội ngũ kỹ thuật viên giàu kinh nghiệm và tận tâm.</p>
+                        <a href="#contact" class="btn btn-outline-primary mt-2">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="contact-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Liên Hệ Với Chúng Tôi</h2>
+            <div class="row justify-content-center g-4">
+                <div class="col-md-4 text-center">
+                    <div class="contact-info-box">
+                        <div style="font-size:2rem;">📧</div>
+                        <h5 class="fw-bold mt-2">Email</h5>
+                        <p class="text-muted mb-0">contact@company.com</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="contact-info-box">
+                        <div style="font-size:2rem;">📞</div>
+                        <h5 class="fw-bold mt-2">Hotline</h5>
+                        <p class="text-muted mb-0">0988 123 456</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="contact-info-box">
+                        <div style="font-size:2rem;">📍</div>
+                        <h5 class="fw-bold mt-2">Địa chỉ</h5>
+                        <p class="text-muted mb-0">123 Nguyễn Huệ, Q.1, TP.HCM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="mailto:contact@company.com" class="btn btn-primary btn-lg">📧 Gửi email ngay</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 Công Ty Chúng Tôi. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                    <a href="#" class="me-3">Trang Chủ</a>
+                    <a href="#about" class="me-3">Về Chúng Tôi</a>
+                    <a href="#services" class="me-3">Dịch Vụ</a>
+                    <a href="#contact">Liên Hệ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

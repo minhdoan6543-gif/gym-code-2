@@ -12,3 +12,4 @@ Bộ bài thực hành CSS Flexbox, Grid và Bootstrap.
 | [flex-grow](./flex-grow/) | Thuộc tính `flex-grow` - khả năng phát triển của Flex Item |
 | [bootstrap-navbar](./bootstrap-navbar/) | Bootstrap Navbar - thanh điều hướng responsive |
 | [bootstrap-landing](./bootstrap-landing/) | Bootstrap Landing Page - trang đích hoàn chỉnh |
+| [bootstrap-company](./bootstrap-company/) | Bootstrap Company Page - trang giới thiệu doanh nghiệp |
