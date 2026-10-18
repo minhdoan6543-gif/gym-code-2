@@ -15,3 +15,4 @@ Bộ bài thực hành CSS Flexbox, Grid và Bootstrap.
 | [bootstrap-company](./bootstrap-company/) | Bootstrap Company Page - trang giới thiệu doanh nghiệp |
 | [bootstrap-grid](./bootstrap-grid/) | Bootstrap Containers & Grid System - bố cục 2 cột responsive |
 | [bootstrap-form](./bootstrap-form/) | Bootstrap Forms & Buttons - form đăng ký người dùng |
+| [bootstrap-landingpage](./bootstrap-landingpage/) | Bootstrap Landing Page với hình ảnh và img-fluid |

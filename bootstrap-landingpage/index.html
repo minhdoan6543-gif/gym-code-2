@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - TechPro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; }
+
+        /* ===== NAVBAR ===== */
+        .navbar { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+
+        /* ===== HERO / BANNER ===== */
+        .hero-section {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0 60px;
+        }
+
+        /* Hiệu ứng vòng tròn nền */
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            width: 600px; height: 600px;
+            background: rgba(99, 102, 241, 0.15);
+            border-radius: 50%;
+            top: -150px; right: -150px;
+        }
+
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            width: 400px; height: 400px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 50%;
+            bottom: -100px; left: -100px;
+        }
+
+        .hero-section h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .hero-section .highlight {
+            background: linear-gradient(90deg, #6366f1, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-img-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-img-wrapper img {
+            border-radius: 20px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+            border: 3px solid rgba(255,255,255,0.1);
+        }
+
+        /* Floating badge */
+        .float-badge {
+            position: absolute;
+            background: white;
+            border-radius: 12px;
+            padding: 10px 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            font-size: 0.85rem;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .float-badge.top-right { top: -15px; right: -10px; color: #6366f1; }
+        .float-badge.bottom-left { bottom: 10px; left: -20px; color: #10b981; }
+
+        /* ===== SECTION CHUNG ===== */
+        .section-tag {
+            display: inline-block;
+            background: #eef2ff;
+            color: #6366f1;
+            padding: 5px 16px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-weight: 800;
+            color: #111827;
+        }
+
+        /* ===== GIỚI THIỆU ===== */
+        .intro-section { background: #f9fafb; }
+
+        .intro-img img {
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .check-icon {
+            width: 26px; height: 26px;
+            background: #ecfdf5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: #10b981;
+            font-weight: 900;
+            margin-top: 2px;
+        }
+
+        /* ===== TÍNH NĂNG ===== */
+        .feature-card {
+            border: none;
+            border-radius: 16px;
+            padding: 30px 24px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            background: #fff;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+        }
+
+        .feature-icon {
+            width: 70px; height: 70px;
+            border-radius: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 18px;
+        }
+
+        .feature-card h5 { font-weight: 700; color: #111827; }
+        .feature-card p  { color: #6b7280; font-size: 0.92rem; }
+
+        /* Màu icon từng card */
+        .icon-purple { background: #eef2ff; }
+        .icon-green  { background: #ecfdf5; }
+        .icon-orange { background: #fff7ed; }
+        .icon-blue   { background: #eff6ff; }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            width: 500px; height: 500px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            top: -200px; right: -100px;
+        }
+
+        .cta-section h2 { font-weight: 800; font-size: 2.2rem; }
+
+        /* ===== STATS ===== */
+        .stat-item h3 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #6366f1;
+        }
+
+        /* ===== FOOTER ===== */
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: #fff; }
+        .footer-brand { font-size: 1.3rem; font-weight: 800; color: #fff; }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary fs-4" href="#">⚡ TechPro</a>
+            <button class="navbar-toggler border-0" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav mx-auto gap-1">
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#intro">Giới Thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#features">Tính Năng</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#cta">Bảng Giá</a></li>
+                </ul>
+                <div class="d-flex gap-2">
+                    <a href="#" class="btn btn-outline-primary">Đăng nhập</a>
+                    <a href="#cta" class="btn btn-primary">Dùng thử miễn phí</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO / BANNER ==================== -->
+    <!-- Bootstrap 5: Tự xây dựng hero-section (không dùng .jumbotron đã bị xóa) -->
+    <section class="hero-section" style="margin-top: 56px;">
+        <div class="container position-relative" style="z-index:1;">
+            <div class="row align-items-center g-5">
+
+                <!-- Text -->
+                <div class="col-lg-6 text-white">
+                    <span class="badge bg-primary bg-opacity-25 text-primary mb-3 px-3 py-2">
+                        🚀 Nền tảng số #1 Việt Nam
+                    </span>
+                    <h1>Giải Pháp Công Nghệ <span class="highlight">Thông Minh</span> Cho Doanh Nghiệp</h1>
+                    <p class="mt-4 mb-4 opacity-75 fs-5">
+                        TechPro giúp doanh nghiệp của bạn chuyển đổi số nhanh chóng,
+                        tăng trưởng bền vững với công nghệ AI hiện đại nhất.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#cta" class="btn btn-primary btn-lg px-4 py-3 fw-bold">
+                            🚀 Đăng Ký Ngay — Miễn Phí
+                        </a>
+                        <a href="#intro" class="btn btn-outline-light btn-lg px-4 py-3">
+                            ▶ Xem Demo
+                        </a>
+                    </div>
+                    <!-- Thống kê nhỏ -->
+                    <div class="row mt-5 g-3">
+                        <div class="col-4 text-center">
+                            <div class="fw-bold fs-4">10K+</div>
+                            <div class="opacity-50 small">Người dùng</div>
+                        </div>
+                        <div class="col-4 text-center border-start border-end border-secondary">
+                            <div class="fw-bold fs-4">98%</div>
+                            <div class="opacity-50 small">Hài lòng</div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <div class="fw-bold fs-4">24/7</div>
+                            <div class="opacity-50 small">Hỗ trợ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hình ảnh Hero -->
+                <div class="col-lg-6 hero-img-wrapper">
+                    <div class="float-badge top-right">✅ Đã xác minh</div>
+                    <!-- Placeholder hình ảnh bằng div màu -->
+                    <img src="https://placehold.co/600x420/6366f1/ffffff?text=TechPro+Dashboard"
+                         class="img-fluid w-100"
+                         alt="TechPro Dashboard">
+                    <div class="float-badge bottom-left">📈 +240% tăng trưởng</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GIỚI THIỆU ==================== -->
+    <section id="intro" class="intro-section py-5">
+        <div class="container py-4">
+            <div class="row align-items-center g-5">
+
+                <!-- Hình ảnh giới thiệu -->
+                <div class="col-lg-5 intro-img">
+                    <img src="https://placehold.co/520x400/10b981/ffffff?text=Ve+Chung+Toi"
+                         class="img-fluid w-100"
+                         alt="Về chúng tôi">
+                </div>
+
+                <!-- Nội dung -->
+                <div class="col-lg-7">
+                    <span class="section-tag">Về TechPro</span>
+                    <h2 class="section-title mt-3 mb-4">
+                        Chúng Tôi Biến Ý Tưởng<br>Thành Sản Phẩm Thực
+                    </h2>
+                    <p class="text-muted fs-5 mb-4">
+                        TechPro là nền tảng SaaS hàng đầu tại Việt Nam, cung cấp bộ công cụ
+                        toàn diện giúp doanh nghiệp vừa và nhỏ chuyển đổi số hiệu quả.
+                    </p>
+
+                    <div class="check-item">
+                        <div class="check-icon">✓</div>
+                        <div><strong>Triển khai nhanh trong 24 giờ</strong> — Không cần kiến thức kỹ thuật, setup dễ dàng.</div>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-icon">✓</div>
+                        <div><strong>Tích hợp 50+ công cụ phổ biến</strong> — Zalo, Google Workspace, Shopee, Lazada...</div>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-icon">✓</div>
+                        <div><strong>Bảo mật chuẩn quốc tế ISO 27001</strong> — Dữ liệu khách hàng được bảo vệ tuyệt đối.</div>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-icon">✓</div>
+                        <div><strong>Hỗ trợ tiếng Việt 100%</strong> — Giao diện và tài liệu hoàn toàn tiếng Việt.</div>
+                    </div>
+
+                    <a href="#cta" class="btn btn-primary btn-lg mt-3 px-4">Tìm Hiểu Thêm →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TÍNH NĂNG ==================== -->
+    <section id="features" class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="section-tag">Tính năng nổi bật</span>
+                <h2 class="section-title mt-3">Mọi Thứ Bạn Cần Trong Một Nền Tảng</h2>
+                <p class="text-muted mt-2 fs-5">Bộ công cụ mạnh mẽ giúp doanh nghiệp vận hành hiệu quả hơn</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Tính năng 1 -->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon icon-purple">🤖</div>
+                        <h5>AI Thông Minh</h5>
+                        <p>Phân tích dữ liệu tự động, đưa ra báo cáo và gợi ý hành động bằng trí tuệ nhân tạo.</p>
+                        <a href="#" class="text-primary fw-semibold text-decoration-none small">Xem thêm →</a>
+                    </div>
+                </div>
+
+                <!-- Tính năng 2 -->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon icon-green">📊</div>
+                        <h5>Báo Cáo Realtime</h5>
+                        <p>Dashboard trực quan, cập nhật số liệu kinh doanh theo thời gian thực 24/7.</p>
+                        <a href="#" class="text-primary fw-semibold text-decoration-none small">Xem thêm →</a>
+                    </div>
+                </div>
+
+                <!-- Tính năng 3 -->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon icon-orange">🔐</div>
+                        <h5>Bảo Mật Tuyệt Đối</h5>
+                        <p>Mã hóa end-to-end, xác thực 2 lớp và sao lưu dữ liệu tự động mỗi ngày.</p>
+                        <a href="#" class="text-primary fw-semibold text-decoration-none small">Xem thêm →</a>
+                    </div>
+                </div>
+
+                <!-- Tính năng 4 -->
+                <div class="col-sm-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon icon-blue">📱</div>
+                        <h5>App Di Động</h5>
+                        <p>Quản lý doanh nghiệp mọi lúc, mọi nơi với ứng dụng iOS và Android miễn phí.</p>
+                        <a href="#" class="text-primary fw-semibold text-decoration-none small">Xem thêm →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STATS ==================== -->
+    <section class="py-5 bg-light">
+        <div class="container py-3">
+            <div class="row g-4 text-center">
+                <div class="col-6 col-md-3 stat-item">
+                    <h3>10,000+</h3>
+                    <p class="text-muted mb-0">Doanh nghiệp tin dùng</p>
+                </div>
+                <div class="col-6 col-md-3 stat-item">
+                    <h3>50+</h3>
+                    <p class="text-muted mb-0">Tích hợp sẵn có</p>
+                </div>
+                <div class="col-6 col-md-3 stat-item">
+                    <h3>99.9%</h3>
+                    <p class="text-muted mb-0">Uptime đảm bảo</p>
+                </div>
+                <div class="col-6 col-md-3 stat-item">
+                    <h3>4.9⭐</h3>
+                    <p class="text-muted mb-0">Đánh giá trung bình</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA SECTION ==================== -->
+    <section id="cta" class="cta-section text-white py-5">
+        <div class="container py-4 text-center position-relative" style="z-index:1;">
+            <span class="badge bg-white text-primary px-3 py-2 mb-3">🎁 Ưu đãi có hạn</span>
+            <h2>Sẵn Sàng Bắt Đầu Hành Trình<br>Chuyển Đổi Số?</h2>
+            <p class="mt-3 mb-5 opacity-75 fs-5">
+                Dùng thử miễn phí 30 ngày — Không cần thẻ tín dụng — Hủy bất kỳ lúc nào
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="#" class="btn btn-light btn-lg px-5 py-3 fw-bold text-primary">
+                    🚀 Đăng Ký Ngay — Miễn Phí
+                </a>
+                <a href="#intro" class="btn btn-outline-light btn-lg px-5 py-3">
+                    📞 Liên hệ tư vấn
+                </a>
+            </div>
+            <p class="mt-4 opacity-50 small">
+                ✅ Không ràng buộc &nbsp;|&nbsp; ✅ Hỗ trợ tiếng Việt &nbsp;|&nbsp; ✅ Bảo mật ISO 27001
+            </p>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 mb-3">
+                    <div class="footer-brand mb-2">⚡ TechPro</div>
+                    <p class="text-muted small">
+                        Nền tảng chuyển đổi số hàng đầu Việt Nam, đồng hành cùng hơn 10,000 doanh nghiệp phát triển bền vững.
+                    </p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="fw-bold mb-3">Sản phẩm</h6>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="#">Tính năng</a>
+                        <a href="#">Bảng giá</a>
+                        <a href="#">Tích hợp</a>
+                        <a href="#">Cập nhật</a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="fw-bold mb-3">Công ty</h6>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="#">Về chúng tôi</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Tuyển dụng</a>
+                        <a href="#">Liên hệ</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-3">Đăng ký nhận tin</h6>
+                    <p class="text-muted small">Nhận cập nhật mới nhất về sản phẩm và ưu đãi.</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Email của bạn...">
+                        <button class="btn btn-primary">Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary mt-4">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                <p class="mb-0 small text-muted">&copy; 2024 TechPro. All rights reserved.</p>
+                <div class="d-flex gap-3">
+                    <a href="#" class="small">Chính sách bảo mật</a>
+                    <a href="#" class="small">Điều khoản sử dụng</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
