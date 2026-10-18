@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-grow Property</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>CSS Flexbox - Thuộc tính <code>flex-grow</code></h1>
+
+    <!-- ===== Ví dụ chính: 5 div, div thứ 2 có flex-grow ===== -->
+    <section>
+        <h2>Ví dụ: 5 Flex Item — Div thứ 2 có <code>flex-grow: 1</code></h2>
+        <p class="note">Div 2 sẽ chiếm toàn bộ phần không gian còn trống, các div khác giữ nguyên kích thước.</p>
+        <div class="container">
+            <div class="item">Div 1</div>
+            <div class="item grow">Div 2 <span class="badge">flex-grow: 1</span></div>
+            <div class="item">Div 3</div>
+            <div class="item">Div 4</div>
+            <div class="item">Div 5</div>
+        </div>
+    </section>
+
+    <!-- ===== So sánh: không có flex-grow ===== -->
+    <section>
+        <h2>So sánh: Không có <code>flex-grow</code></h2>
+        <p class="note">Tất cả các div có kích thước bằng nhau, không div nào phát triển thêm.</p>
+        <div class="container">
+            <div class="item">Div 1</div>
+            <div class="item">Div 2</div>
+            <div class="item">Div 3</div>
+            <div class="item">Div 4</div>
+            <div class="item">Div 5</div>
+        </div>
+    </section>
+
+    <!-- ===== Bonus: flex-grow nhiều giá trị khác nhau ===== -->
+    <section>
+        <h2>Nâng cao: flex-grow với nhiều giá trị khác nhau</h2>
+        <p class="note">Tỷ lệ phân chia không gian: Div 1 (grow:1) | Div 2 (grow:3) | Div 3 (grow:1) | Div 4 (grow:2) | Div 5 (grow:1)</p>
+        <div class="container">
+            <div class="item g1">Div 1 <span class="badge">grow: 1</span></div>
+            <div class="item g3">Div 2 <span class="badge">grow: 3</span></div>
+            <div class="item g1">Div 3 <span class="badge">grow: 1</span></div>
+            <div class="item g2">Div 4 <span class="badge">grow: 2</span></div>
+            <div class="item g1">Div 5 <span class="badge">grow: 1</span></div>
+        </div>
+    </section>
+
+</body>
+</html>
