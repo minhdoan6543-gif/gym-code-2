@@ -1,0 +1,80 @@
+@media only screen and (max-width: 768px) {
+    .navbar-brand {
+        padding-left: 0.5rem;
+    }
+
+    header .row .col-md-7 {
+        padding: 8vmin 2vmin 12vmin;
+    }
+
+    header .row .col-md-5 {
+        padding: 2vmin 1vmin;
+    }
+
+    .section-1 {
+        padding: 10vmin 0;
+    }
+
+    .section-1 .row .col-md-6 .panel {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-top: 2rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .numbers {
+        margin-top: -8vmin;
+    }
+
+    .numbers .rect {
+        width: 10rem;
+        height: 8rem;
+        padding-top: 1.5rem;
+        margin: 0.5rem;
+    }
+
+    .numbers .rect h1 {
+        font-size: 2.2rem;
+    }
+
+    .numbers .rect p {
+        font-size: 0.9rem;
+    }
+
+    .section-3 {
+        padding: 4rem 1rem !important;
+    }
+
+    .section-3 .platform .col-md-6 {
+        text-align: center !important;
+    }
+
+    .section-3 .desktop {
+        width: 85%;
+        max-width: 320px;
+    }
+
+    .section-4 .carousel-item {
+        padding-left: 0;
+    }
+
+    footer .row .col-md-2,
+    footer .row .col-md-5 {
+        margin-top: 2rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    header .container .col-md-7 h1 {
+        font-size: 2.2rem;
+    }
+
+    .cover .content > h1 {
+        font-size: 1.8rem;
+    }
+
+    .section-4 .card {
+        width: 100%;
+    }
+}

@@ -18,4 +18,5 @@ Bộ bài thực hành CSS Flexbox, Grid và Bootstrap.
 | [bootstrap-form](./bootstrap-form/) | Bootstrap Forms & Buttons - form đăng ký người dùng |
 | [bootstrap-landingpage](./bootstrap-landingpage/) | Bootstrap Landing Page với hình ảnh và img-fluid |
 | [bootstrap-layout](./bootstrap-layout/) | Bootstrap 3 Layout - trang mua sắm trực tuyến (layout.html + poly.css) |
+| [bootstrap-book](./bootstrap-book/) | Trang web tĩnh giới thiệu về sách (Book Landing Page) - Responsive với Bootstrap đầy đủ 7 phần (Header/Overview, Author, Features, Prices, Download, Reader's Say, Footer) |
 | [mysql-create-database](./mysql-create-database/) | [Thực hành] Tạo CSDL trên MySQL Workbench |
